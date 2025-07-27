@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{geometry}
+\geometry{margin=1in}
+\usepackage{parskip}
+\usepackage{sectsty}
+\sectionfont{\large\bfseries}
+\subsectionfont{\normalsize\bfseries}
+
+\begin{document}
+
+\section*{Password Strength Analyzer and Wordlist Generator Report}
+
+\subsection*{Abstract}
+This project develops a Python-based tool to analyze password strength and generate custom wordlists for security testing. The tool uses the zxcvbn library to evaluate password strength and creates wordlists from user inputs, incorporating variations like leetspeak and appended years. The command-line interface ensures ease of use, with results exported to a text file for further use in security applications.
+
+\subsection*{Introduction}
+Passwords are a critical component of cybersecurity, yet weak passwords remain a common vulnerability. This project aims to create a tool that assesses password strength and generates custom wordlists to simulate password-cracking scenarios. The tool helps users understand password vulnerabilities and supports ethical security testing by creating targeted wordlists based on user-provided inputs, such as names or dates.
+
+\subsection*{Tools Used}
+The project leverages the following tools and libraries:
+\begin{itemize}
+    \item \textbf{Python 3}: Core programming language for implementation.
+    \item \textbf{zxcvbn}: Library for password strength analysis, providing entropy and crack time estimates.
+    \item \textbf{argparse}: Python module for handling command-line arguments.
+    \item \textbf{itertools}: For generating combinations of user inputs.
+\end{itemize}
+
+\subsection*{Steps Involved in Building the Project}
+\begin{enumerate}
+    \item \textbf{Setup}: Installed Python and required libraries (zxcvbn, argparse) using pip.
+    \item \textbf{Password Analysis}: Implemented a function using zxcvbn to analyze password strength, returning a score (0--4), estimated crack time, and improvement suggestions.
+    \item \textbf{Wordlist Generation}: Developed functions to generate wordlists from user inputs, including:
+        \begin{itemize}
+            \item Combinations of inputs (e.g., name + pet).
+            \item Leetspeak variations (e.g., replacing `a' with `@' or `4').
+            \item Appending years (2000--2025) to words.
+        \end{itemize}
+    \item \textbf{Output Handling}: Created a function to save the wordlist to a .txt file.
+    \item \textbf{Command-Line Interface}: Used argparse to allow users to input a password for analysis and/or inputs for wordlist generation via CLI.
+    \item \textbf{Testing}: Tested the tool with sample inputs (e.g., \verb|python password_analyzer.py --password "P@ssw0rd" --inputs Mr.Robot 110 --output mylist.txt|) to verify functionality.
+\end{enumerate}
+
+\subsection*{Conclusion}
+The Password Strength Analyzer and Wordlist Generator successfully provides an accessible tool for evaluating password security and creating custom wordlists. The use of zxcvbn ensures accurate strength analysis, while the wordlist generator enhances its utility for ethical hacking scenarios. Future improvements could include a graphical interface using tkinter and support for additional variation patterns. This project demonstrates practical applications of Python in cybersecurity, offering valuable insights for secure password practices.
+
+\end{document}
